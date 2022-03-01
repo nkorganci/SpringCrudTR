@@ -17,5 +17,4 @@ public class SpringCrudTrApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SpringCrudTrApplication.class, args);
 	}
-
 }

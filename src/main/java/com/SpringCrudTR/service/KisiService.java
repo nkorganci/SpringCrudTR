@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class KisiService {
@@ -27,5 +28,9 @@ public class KisiService {
     public Kisi kisiEkle(Kisi kisi){
         //System.out.println("Kisi Eklendi de yazdirilabilir.");
         return kisiRepository.save(kisi);
+    }
+    //Id ile Kisi getiren service methodu
+    public Optional<Kisi> idIleKisiGetir(Integer id){ // Optional is for returning NONE, will not give NULL EXCEPTION
+        return kisiRepository.findById(id);
     }
 }
