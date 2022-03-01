@@ -23,4 +23,9 @@ public class KisiService {
         return kisiRepository.findAll();
     }
 
+    // Veri tabanina Kisi ekleyen servis metodu
+    public Kisi kisiEkle(Kisi kisi){
+        //System.out.println("Kisi Eklendi de yazdirilabilir.");
+        return kisiRepository.save(kisi);
+    }
 }
