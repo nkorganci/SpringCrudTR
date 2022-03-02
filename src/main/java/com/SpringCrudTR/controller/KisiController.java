@@ -5,6 +5,7 @@ import com.SpringCrudTR.service.KisiService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 import java.util.Optional;
 
@@ -37,5 +38,9 @@ public class KisiController {
     @DeleteMapping(path = "/kisiler/sil/{id}")
     public String idIleKisiSil(@PathVariable Integer id){
         return kisiService.idIleKisiSil(id);
+    }
+    @PutMapping(path = "kisiler/guncelle/{id}")
+    public Kisi idIleGuncelle(@PathVariable Integer id, @RequestBody Kisi yeniKisi){
+        return kisiService.idIleKisiGuncelle(id,yeniKisi);
     }
 }

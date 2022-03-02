@@ -5,9 +5,11 @@ import com.SpringCrudTR.repository.KisiRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 import java.util.Optional;
 
+//View methodlari
 @Service
 public class KisiService {
 
@@ -42,7 +44,8 @@ public class KisiService {
         return id + " li kisi silindi";
     }
 
-    public Kisi idIleKisiGuncelle(Integer id, ){
-
+    public Kisi idIleKisiGuncelle(Integer id, Kisi guncelleKisi){
+        kisiRepository.findById(id).orElseThrow(() -> new IllegalStateException(id + " li kisi bulunamadi"));
+        return kisiRepository.save(guncelleKisi);
     }
 }
