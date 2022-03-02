@@ -34,6 +34,8 @@ public class KisiController {
     public Optional<Kisi> idIleKisiListeleme(@PathVariable("id") Integer id){
         return kisiService.idIleKisiGetir(id);
     }
-
-
+    @DeleteMapping(path = "/kisiler/sil/{id}")
+    public String idIleKisiSil(@PathVariable Integer id){
+        return kisiService.idIleKisiSil(id);
+    }
 }

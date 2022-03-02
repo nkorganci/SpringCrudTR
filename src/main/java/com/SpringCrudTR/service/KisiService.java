@@ -33,4 +33,16 @@ public class KisiService {
     public Optional<Kisi> idIleKisiGetir(Integer id){ // Optional is for returning NONE, will not give NULL EXCEPTION
         return kisiRepository.findById(id);
     }
+
+    public String idIleKisiSil(Integer id){
+        if(kisiRepository.findById(id)==null){
+            throw new IllegalStateException(id + " li kisi bulunamadi");
+        }
+        kisiRepository.deleteById(id);
+        return id + " li kisi silindi";
+    }
+
+    public Kisi idIleKisiGuncelle(Integer id, ){
+
+    }
 }
